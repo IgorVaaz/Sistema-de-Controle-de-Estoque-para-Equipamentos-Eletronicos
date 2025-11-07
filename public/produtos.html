@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Produtos</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="produtos.css"> </head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">Sistema de Estoque</div>
+        <div class="user-info">
+            <span>Olá, <strong id="user-name">Usuário</strong></span>
+            <a href="/logout" class="btn-logout">Sair</a>
+        </div>
+    </header>
+
+    <main class="container-main">
+        <div class="page-header">
+            <h1>Gerenciamento de Produtos</h1>
+            <button id="btn-novo-produto" class="btn-primary">Novo Produto</button>
+        </div>
+
+        <div class="table-tools">
+            <input type="search" id="input-busca" placeholder="Buscar por nome, marca ou modelo...">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Marca / Modelo</th>
+                        <th>Especificações</th>
+                        <th>Estoque Atual</th>
+                        <th>Estoque Mínimo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-produtos-corpo">
+                    <tr>
+                        <td colspan="6" style="text-align: center;">Carregando...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div id="modal-produto" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close-btn">&times;</span>
+            <h2 id="modal-titulo">Novo Produto</h2>
+            
+            <form id="form-produto">
+                <input type="hidden" id="produto_id" name="produto_id">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome">Nome do Produto*</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marca">Marca</label>
+                        <input type="text" id="marca" name="marca">
+                    </div>
+                    <div class="form-group">
+                        <label for="modelo">Modelo</label>
+                        <input type="text" id="modelo" name="modelo">
+                    </div>
+                    <div class="form-group">
+                        <label for="cor">Cor</label>
+                        <input type="text" id="cor" name="cor">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="processador">Processador</label>
+                        <input type="text" id="processador" name="processador">
+                    </div>
+                    <div class="form-group">
+                        <label for="ram">Memória RAM</label>
+                        <input type="text" id="ram" name="ram">
+                    </div>
+                    <div class="form-group">
+                        <label for="armazenamento">Armazenamento</label>
+                        <input type="text" id="armazenamento" name="armazenamento">
+                    </div>
+                    <div class="form-group">
+                        <label for="tela">Tela</label>
+                        <input type="text" id="tela" name="tela">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sistema_operacional">Sistema Operacional</label>
+                        <input type="text" id="sistema_operacional" name="sistema_operacional">
+                    </div>
+                    
+                    <hr class="grid-span-all">
+                    
+                    <div class="form-group">
+                        <label for="quantidade_atual">Qtd. Inicial (Novo)</label>
+                        <input type="number" id="quantidade_atual" name="quantidade_atual" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="estoque_minimo">Estoque Mínimo*</label>
+                        <input type="number" id="estoque_minimo" name="estoque_minimo" min="0" value="1" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="btn-cancelar" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="produtos.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Controle de Estoque</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">Sistema de Estoque</div>
+        <div class="user-info">
+            <span>Olá, <strong id="user-name">Carregando...</strong></span>
+            <a href="/logout" class="btn-logout">Sair</a>
+        </div>
+    </header>
+
+    <main class="container-main">
+        <h1>Dashboard Principal</h1>
+        <p>Bem-vindo ao Sistema de Gerenciamento de Equipamentos Eletrônicos.</p>
+
+        <nav class="main-nav">
+            <a href="produtos.html" class="nav-card">
+                <h2>Gerenciar Produtos</h2>
+                <p>Cadastrar, editar e buscar produtos.</p>
+            </a>
+            <a href="estoque.html" class="nav-card">
+                <h2>Gestão de Estoque</h2>
+                <p>Registrar entradas e saídas.</p>
+            </a>
+            <a href="historico.html" class="nav-card">
+                <h2>Histórico</h2>
+                <p>Visualizar movimentações.</p>
+            </a>
+        </nav>
+    </main>
+
+    <script>
+        // Script para buscar e exibir o nome do usuário
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/api/user/me')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.nome) {
+                        document.getElementById('user-name').textContent = data.nome;
+                    } else {
+                        // Se não conseguir o nome (sessão expirou?), volta ao login
+                        window.location.href = '/login.html';
+                    }
+                })
+                .catch(() => {
+                    window.location.href = '/login.html';
+                });
+        });
+    </script>
+
+</body>
+</html>

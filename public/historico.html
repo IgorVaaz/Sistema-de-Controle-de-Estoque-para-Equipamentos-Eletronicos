@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Movimentações</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="produtos.css"> </head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">Sistema de Estoque</div>
+        <div class="user-info">
+            <span>Olá, <strong id="user-name">Usuário</strong></span>
+            <a href="/logout" class="btn-logout">Sair</a>
+        </div>
+    </header>
+
+    <main class="container-main">
+        <div class="page-header">
+            <h1>Histórico de Movimentações</h1>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data/Hora</th>
+                        <th>Produto</th>
+                        <th>Responsável</th>
+                        <th>Tipo</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-historico-corpo">
+                    <tr><td colspan="5">Carregando histórico...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="historico.js"></script>
+</body>
+</html>

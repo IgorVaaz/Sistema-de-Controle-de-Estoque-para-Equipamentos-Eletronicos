@@ -1,0 +1,15 @@
+1 - Abrir o projeto no vscode
+2 - Copiar o arquivo saepdb.sql e rodar no SQL do Xampp
+3 - Rodar aplicação no terminal do vscode com: 
+
+	npm init -y
+	npm install express mysql2 bcrypt express-session body-parser
+	npm install
+
+	node server.js
+
+4 - Acessar http://localhost:3000
+
+5 - Cadastrar usuário (cadastre-se)
+
+6 - Efetuar login com email e senha cadastrada.
